@@ -1,0 +1,12 @@
+<app-header (fetaureSelected)="onNavigate($event)"></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <app-recipes *ngIf="selected=='recipe'"></app-recipes>
+            <app-shopping-list *ngIf="selected !=='recipe'"></app-shopping-list> -->
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</div>

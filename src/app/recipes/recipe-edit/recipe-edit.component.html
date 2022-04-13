@@ -1,0 +1,48 @@
+<div class="container">
+<div class="row">
+    <form [formGroup]="myForm" (ngSubmit)="Save()" >
+    <div class="col-xs-12">
+        <button type="submit" [disabled]="!myForm.valid" class="btn btn-success m-1">Save</button>
+        <button type="button" class="btn btn-danger m-1" >Cancel</button>
+    </div>
+     <div class="form-group">
+         <label for="name">Name :</label>
+         <input type="text" name="name" formControlName="name"  class="form-control" id="name">
+     </div>
+     <div class="form-group">
+        <label for="imageUrl">imageUrl :</label>
+        <input type="text" name="imagePath"  formControlName="imgPath" class="form-control" id="imageUrl">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" formControlName="description" class="form-control" id="description"  rows="6"></textarea>
+    </div>
+    <div class="row my-2">
+        <div class="col-xs-12" formArrayName="ingredients">
+            <div class="row" 
+            *ngFor="let ingred of controls ; let i=index"
+            [formGroupName]="i" 
+            >
+                <div class="col-sm-8">
+                    <input type="text" 
+                    formControlName="name"
+                    class="form-control">
+                    
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" 
+                    formControlName="amount"
+                    class="form-control">
+                </div>
+
+                <div class="col-sm-2">
+                    <button class="btn btn-danger">X</button>
+                </div>
+            </div>
+            <hr>
+            <button class="btn btn-success" type="button" (click)="addInd()">Add Ingredients</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>

@@ -1,0 +1,71 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3>{{showRecipe.name}}</h3>
+        <img [src]="showRecipe.imgPath" alt="RecipeImage" style="max-width:200px;">
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <img src="" alt="" class="w-100">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Recipe Name</h1>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+       <div class="col-xs-12"> 
+         <!-- <button type="button" class="btn btn-primary dropdown-toggle"> 
+        </button> -->
+        <div class="btn-group dropdown-toggle">
+           
+            <ul class="dropdown-menu ">
+                <li ><a href="#">to Shopping List</a></li>
+                <li ><a >Edit Recipe</a></li>
+                <li ><a href="#">Delete Recipe</a></li>
+            </ul> 
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Manage Recipe
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item active" (click)="addToShopping(showRecipe)">to Shopping List</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/recipes',showRecipe.id,'edit']">Edit Recipe</a></li>
+                  <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+            
+                </ul>
+              </div>
+        </div>
+    </div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+       <!-- {{showRecipe?.descriptopn}} -->
+       {{showRecipe.description}}
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+      
+     
+        <ul class="list-group">
+            <li class="list-group-item"  *ngFor="let ing of showRecipe.ingredinets">{{ing.name}}</li>
+           
+          </ul>
+    </div>
+</div>
+
+

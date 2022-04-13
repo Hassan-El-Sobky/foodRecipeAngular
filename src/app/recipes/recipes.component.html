@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list ></app-recipe-list>
+        <!-- (subRecipe)="selectedItem=$event" -->
+    </div>
+    <div class="col-md-7">
+       
+        <router-outlet *ngIf="selectedItem ; else Noselected"></router-outlet>
+        <!-- <app-recipe-detail [showRecipe]="selectedItem" *ngIf="selectedItem ; else Noselected"></app-recipe-detail> -->
+        <ng-template #Noselected >
+            <p>No Item Selected</p>
+        </ng-template>
+    </div>
+</div>

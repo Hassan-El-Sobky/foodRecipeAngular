@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- <button (click)="goToNew()" class="btn btn-success">New Recipe</button> -->
+        <a routerLink="/recipes/new" class="btn btn-success">New Recipe</a>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-xs-12" >
+        <!-- <div class="row">
+            <div class="col-md-6" *ngFor="let recipe of Recipes">
+                <a href="" class="list-group-item clearfix"></a>
+                <div class="pull-left">
+                    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+                    <p class="list-group-item-text"> {{recipe.description}}</p>
+                </div>
+                <span class="pull-right">
+                    <img [src]="recipe.imgPath" alt="" class="img-fluid">
+                </span>
+            </div>
+        </div> -->
+        <ol class="list-group list-group">
+         <app-recipe-item *ngFor="let recipe of Recipes" (selectedRecipe)="selectedItem(recipe)" [Recipe]="recipe"></app-recipe-item>
+        
+          
+          </ol>
+    </div>
+</div>
